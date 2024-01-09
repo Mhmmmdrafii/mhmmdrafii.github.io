@@ -5,35 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>PRA UAS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+    <!-- My AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- My CSS -->
     <link rel="stylesheet" href="style.css" />
+    <!-- My particle.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   </head>
-  <body id="home">
+  <body>
+    <!-- particle.js buka -->
+    <div id="particles-js"></div>
+    <div id="text-overlay"></div>
+    <!-- particle.js tutup -->
+
     <!-- navbar buka -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">Muhammad Rafii</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav ms-auto">
-            <a class="nav-link active" aria-current="page" href="#home">Home</a>
-            <a class="nav-link active" href="#about">About</a>
-            <a class="nav-link active" href="#project">Project</a>
-            <a class="nav-link active" aria-disabled="true" href="#contact">Contact Me</a>
+    <section id="home">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="#">Muhammad Rafii</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto">
+              <a class="nav-link active" aria-current="page" href="#home">Home</a>
+              <a class="nav-link active" href="#about">About</a>
+              <a class="nav-link active" href="#gallery">Gallery</a>
+              <a class="nav-link active" aria-disabled="true" href="#contact">Contact Me</a>
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </section>
     <!-- navbar tutup -->
 
     <!-- main section buka -->
-    <section class="jumbotron text-center mb-5">
-      <img src="img/pp gueh.jpeg" alt="gueh tuh" width="180" class="rounded-circle img-thumbnail">
+    <section class="jumbotron text-center">
+      <img src="img/pp gueh ril.jpg" alt="gueh tuh" width="180" class="rounded-circle img-thumbnail" />
       <h1 class="display-4">Pipong</h1>
-      <p class="lead">Freelencer | one-san hunter</p>
+      <p class="lead"></p>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#ffffff"
@@ -53,12 +65,17 @@
           </div>
         </div>
         <div class="row justify-content-center fs-5 text-center">
-          <div class="col-md-4">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti officiis nemo esse est, ducimus dolores debitis molestiae quasi sit totam delectus earum suscipit quos saepe magni et expedita perferendis. Harum voluptas corrupti veniam consequatur at.
+          <div class="col-md-4" data-aos="fade-right" data-aos-duration="1000">
+            <p>
+              Haloo!!,perkenalkan nama saya Muhammad Rafi'i kalian juga bisa memanggil dengan nama pipong,saya tinggal di rantau (tapin) dan berumur 19 tahun(saat web ini di buat) saya memiliki hobi fotografi serta development web dan saya
+              adalah seorang mahasiswa di universitas islam kalimantan muhammad arsyad al-banjari banjarmasin.
             </p>
           </div>
-          <div class="col-md-4">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo tempore, aut, aliquid dignissimos ipsam, ipsum eum blanditiis earum illum possimus dolore dicta eligendi. Fuga soluta, doloremque, tempora rem alias reprehenderit ratione, quis dolorem officia fugit autem architecto accusamus quo hic.</p>
+          <div class="col-md-4" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+            <p>
+              Dan kalo kalian penasaran dengan foto apa saja yang pernah diambil bisa cek section selanjutnya atau klik 'gallery' pada navbar di atas dan,kalo kalian masih penasaran bisa kalian cek section contact me atau bisa juga klik
+              navbar 'contact me ' di atas dan jangan ragu untuk memberikan komentar/saran tentang web ini di section yang sama.
+            </p>
           </div>
         </div>
       </div>
@@ -73,52 +90,37 @@
     <!-- about me tutup -->
 
     <!-- project buka -->
-    <section id="project">
+    <section id="gallery">
       <div class="container">
         <div class="row text-center mb-3">
           <div class="col">
-            <h2>My project</h2>
+            <h2>My Gallery</h2>
           </div>
         </div>
         <div class="row justify-content-center">
           <div class="col-md-4 mb-3">
-            <div class="card">
-              <img src="img/project/project1.jpg" class="card-img-top" alt="project1" />
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
+            <div class="card" data-aos="flip-left" data-aos-duration="500">
+              <img src="img/Myfoto/foto1 (1).jpg" class="card-img-top" alt="Foto1" />
             </div>
           </div>
           <div class="col-md-4 mb-3">
-            <div class="card">
-              <img src="img/project/project4.jpg" class="card-img-top" alt="project4" />
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
+            <div class="card" data-aos="flip-left" data-aos-duration="500" data-aos-delay="150">
+              <img src="img/Myfoto/foto1 (2).jpg" class="card-img-top" alt="Foto2" />
             </div>
           </div>
           <div class="col-md-4 mb-3">
-            <div class="card">
-              <img src="img/project/project5.jpg" class="card-img-top" alt="project5" />
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
+            <div class="card" data-aos="flip-left" data-aos-duration="500" data-aos-delay="250">
+              <img src="img/Myfoto/foto1 (3).jpg" class="card-img-top" alt="Foto3" />
             </div>
           </div>
           <div class="col-md-4 mb-3">
-            <div class="card">
-              <img src="img/project/project5.jpg" class="card-img-top" alt="project5" />
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
+            <div class="card" data-aos="flip-left" data-aos-duration="500" data-aos-delay="350">
+              <img src="img/Myfoto/foto1 (4).jpg" class="card-img-top" alt="Foto4" />
             </div>
           </div>
           <div class="col-md-4 mb-3">
-            <div class="card">
-              <img src="img/project/project5.jpg" class="card-img-top" alt="project5" />
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
+            <div class="card" data-aos="flip-left" data-aos-duration="500" data-aos-delay="450">
+              <img src="img/Myfoto/foto1 (5).jpg" class="card-img-top" alt="Foto5" />
             </div>
           </div>
         </div>
@@ -138,7 +140,7 @@
       <div class="container">
         <div class="row">
           <div class="col text-center mb-3">
-            <h2>Contect Me</h2>
+            <h2>Contact Me</h2>
           </div>
           <div class="row justify-content-center">
             <div class="col-md-8">
@@ -182,33 +184,162 @@
 
     <!-- Footer Buka -->
     <footer class="bg-primary text-white text-center p-3">
-      <p>Created with <i class="bi bi-suit-heart-fill text-danger"><a href="https://www.instagram.com/_piponggg/" class="text-white fw-bold">Piponggg</i></a></p>
+      <p>Follow My Social Media</p>
+      <a href="https://www.youtube.com/channel/UC1wIGVgzQa4LD8iCCGYsVWg" target="_blank" rel="noopener noreferrer" class="text-white social-icon"><i class="bi bi-youtube"></i></a>
+      <a href="https://web.facebook.com/rafii.pipong" target="_blank" rel="noopener noreferrer" class="text-white social-icon"><i class="bi bi-facebook"></i></a>
+      <a href="https://www.instagram.com/_piponggg/" target="_blank" rel="noopener noreferrer" class="text-white social-icon"><i class="bi bi-instagram"></i></a>
+      <a href="https://wa.me/qr/W3T4OS7W4VL5P1" target="_blank" rel="noopener noreferrer" class="text-white social-icon"><i class="bi bi-whatsapp"></i></a>
+      <a href="https://github.com/Mhmmmdrafii" target="_blank" rel="noopener noreferrer" class="text-white social-icon"><i class="bi bi-github"></i></a>
     </footer>
     <!-- Footer Tutup -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbzx-4u8G5ecJz4RO8mCeYipTTCSJpvOZHEalPwdoAySlRfH079861nNUf0dyicDEdHf/exec'
-      const form = document.forms['pipong-contact-form'];
-      const btnKirim = document.querySelector('.btn-kirim');
-      const btnLoading = document.querySelector('.btn-loading');
-      const myAlert = document.querySelector('.my-alert');
-    
-      form.addEventListener('submit', e => {
-        e.preventDefault()
-        btnLoading.classList.toggle('d-none');
-        btnKirim.classList.toggle('d-none');
-        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-          .then(response => {
-            btnLoading.classList.toggle('d-none');
-            btnKirim.classList.toggle('d-none');
-            myAlert.classList.toggle('d-none');
+      AOS.init({
+        once: true,
+      });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/TextPlugin.min.js"></script>
+
+    <script>
+      gsap.registerPlugin(TextPlugin);
+      gsap.to(".lead", { duration: 3, delay: 2, text: "Mahasiswa | Freelencer | Fotografer" });
+      gsap.to("#text-overlay", { duration: 1.8, text: "SELAMAT DATANG DI WEB PORTOFOLIO SAYA" });
+    </script>
+
+    <script>
+      const scriptURL = "https://script.google.com/macros/s/AKfycbzx-4u8G5ecJz4RO8mCeYipTTCSJpvOZHEalPwdoAySlRfH079861nNUf0dyicDEdHf/exec";
+      const form = document.forms["pipong-contact-form"];
+      const btnKirim = document.querySelector(".btn-kirim");
+      const btnLoading = document.querySelector(".btn-loading");
+      const myAlert = document.querySelector(".my-alert");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        btnLoading.classList.toggle("d-none");
+        btnKirim.classList.toggle("d-none");
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            btnLoading.classList.toggle("d-none");
+            btnKirim.classList.toggle("d-none");
+            myAlert.classList.toggle("d-none");
             form.reset();
-            console.log('Success!', response)
+            console.log("Success!", response);
           })
-          .catch(error => console.error('Error!', error.message))
-      })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+
+    <script>
+      particlesJS("particles-js", {
+        particles: {
+          number: {
+            value: 90,
+            density: {
+              enable: true,
+              value_area: 800,
+            },
+          },
+          color: {
+            value: "#000000",
+          },
+          shape: {
+            type: "circle",
+            stroke: {
+              width: 0,
+              color: "#000000",
+            },
+            polygon: {
+              nb_sides: 5,
+            },
+          },
+          opacity: {
+            value: 0.5,
+            random: false,
+            anim: {
+              enable: false,
+              speed: 1,
+              opacity_min: 0.1,
+              sync: false,
+            },
+          },
+          size: {
+            value: 3,
+            random: true,
+            anim: {
+              enable: false,
+              speed: 40,
+              size_min: 0.1,
+              sync: false,
+            },
+          },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#000000",
+            opacity: 0.4,
+            width: 1,
+          },
+          move: {
+            enable: true,
+            speed: 6,
+            direction: "none",
+            random: false,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+            attract: {
+              enable: false,
+              rotateX: 600,
+              rotateY: 1200,
+            },
+          },
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: {
+              enable: true,
+              mode: "grab",
+            },
+            onclick: {
+              enable: true,
+              mode: "push",
+            },
+            resize: true,
+          },
+          modes: {
+            grab: {
+              distance: 140,
+              line_linked: {
+                opacity: 1,
+              },
+            },
+            bubble: {
+              distance: 400,
+              size: 40,
+              duration: 2,
+              opacity: 8,
+              speed: 3,
+            },
+            repulse: {
+              distance: 200,
+              duration: 0.4,
+            },
+            push: {
+              particles_nb: 4,
+            },
+            remove: {
+              particles_nb: 2,
+            },
+          },
+        },
+        retina_detect: true,
+      });
     </script>
   </body>
 </html>

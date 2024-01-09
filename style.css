@@ -1,12 +1,46 @@
 .jumbotron{
-    padding-top: 6rem;
+    padding-top: 4.7rem;
     background-color: #e2edff;
 }
 
-#project{
+#gallery{
+    padding-top: 4rem;
     background-color: #e2edff;
 }
 
-section {
-    padding-top: 5rem;
+#about{
+    padding-top: 4rem;
 }
+
+#contact{
+    padding-top: 4rem;
+}
+
+.social-icon:not(:last-child) {
+    margin-right: 8px;
+}
+
+#particles-js{
+    background-color: #e2edff;;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    padding-bottom: 4rem;
+}
+
+#text-overlay {
+    position: absolute;
+    font-size: 185%;
+    font-weight: 700;
+    top: 50%;
+    left: 50%;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+@media only screen and (max-width: 768px) and (hover: none) and (pointer: coarse), (max-width: 768px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 16/9), (max-width: 768px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 18.5/9), (max-width: 768px) and (-webkit-device-pixel-ratio: 3) and (device-aspect-ratio: 16/9), (max-width: 768px) and (-webkit-device-pixel-ratio: 3) and (device-aspect-ratio: 18.5/9) {
+    #text-overlay {
+      display: none;
+    }
+  }
+  
