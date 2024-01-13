@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+    <!-- My AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- My CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- My particle.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <!-- CSS Khusus Buka -->
+    <style>
+      /* Menengahkan elemen */
+      .centered-container {
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          left: 71.7vh;
+          position: fixed; 
+      }
+
+      @media (max-width: 768px) {
+      .centered-container {
+      left: 0; /* Mengubah posisi menjadi 0 pada mobile */
+      width: 100%; /* Mengisi keseluruhan lebar */
+      }
+      #visitorName {
+      margin-top: 90px; /* Mengurangi margin pada mobile */
+      }
+      .centered-container{
+        top: 20vh;
+      }
+  }
+
+      /* Menambahkan padding untuk elemen input */
+      #visitorName{
+        background: transparent;
+        border: 1px solid white; /* Menambah border putih untuk mempertahankan visibility */
+        color: white; /* Warna teks */
+        margin-top: 450px; 
+          
+      }
+
+      #nextPageButton {
+        background: transparent;
+        border: 1px solid white;
+    }
+
+
+  </style>
+    <!-- CSS Khusus Tutup -->
+
+
+  </head>
+  <body>
+    <!-- particle.js buka -->
+    <div id="particles-js1"></div>
+    <div id="text-overlay1"></div>
+    <!-- particle.js tutup -->
+
+    <!-- conten buka -->
+    <div class="container mt-5">
+      <!-- Inputan nama pengunjung -->
+      <div class="centered-container">
+      <div class="mb-3">
+          <input type="text" class="form-control" id="visitorName">
+      </div>
+      
+      <!-- Tombol untuk masuk ke halaman selanjutnya (awalnya disembunyikan) -->
+      <button id="nextPageButton" type="button" class="btn btn-primary d-none">
+          Lanjut ke Halaman Selanjutnya
+      </button>
+  </div>
+  </div>
+    <!-- conten tutup -->
+
+    <!-- script section open -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/TextPlugin.min.js"></script>
+
+    <script>
+      gsap.registerPlugin(TextPlugin);
+      gsap.to("#text-overlay1", { duration: 1.8, text: "SELAMAT DATANG DI WEB PORTOFOLIO SAYA SILAHKAN ISI NAMA ANDA DI BAWAH" });
+    </script>
+
+
+    <script>
+      particlesJS("particles-js1", {
+        particles: {
+          number: {
+            value: 90,
+            density: {
+              enable: true,
+              value_area: 1000,
+            },
+          },
+          color: {
+            value: "#ffffff",
+          },
+          shape: {
+            type: "circle",
+            stroke: {
+              width: 0,
+              color: "#ffffff",
+            },
+            polygon: {
+              nb_sides: 5,
+            },
+          },
+          opacity: {
+            value: 0.5,
+            random: false,
+            anim: {
+              enable: false,
+              speed: 1,
+              opacity_min: 0.1,
+              sync: false,
+            },
+          },
+          size: {
+            value: 3,
+            random: true,
+            anim: {
+              enable: false,
+              speed: 40,
+              size_min: 0.1,
+              sync: false,
+            },
+          },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#ffffff",
+            opacity: 0.4,
+            width: 1,
+          },
+          move: {
+            enable: true,
+            speed: 6,
+            direction: "none",
+            random: false,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+            attract: {
+              enable: false,
+              rotateX: 600,
+              rotateY: 1200,
+            },
+          },
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: {
+              enable: true,
+              mode: "grab",
+            },
+            onclick: {
+              enable: true,
+              mode: "push",
+            },
+            resize: true,
+          },
+          modes: {
+            grab: {
+              distance: 140,
+              line_linked: {
+                opacity: 1,
+              },
+            },
+            bubble: {
+              distance: 400,
+              size: 40,
+              duration: 2,
+              opacity: 8,
+              speed: 3,
+            },
+            repulse: {
+              distance: 200,
+              duration: 0.4,
+            },
+            push: {
+              particles_nb: 4,
+            },
+            remove: {
+              particles_nb: 2,
+            },
+          },
+        },
+        retina_detect: true,
+      });
+    </script>
+
+<script>
+  // Saat inputan nama diisi, munculkan tombol
+  document.getElementById('visitorName').addEventListener('input', function() {
+      const nameInput = this.value.trim(); // Menghapus spasi awal dan akhir
+      const nextPageButton = document.getElementById('nextPageButton');
+      
+      if (nameInput.length > 0) {
+          nextPageButton.classList.remove('d-none'); // Tampilkan tombol jika ada input
+      } else {
+          nextPageButton.classList.add('d-none'); // Sembunyikan tombol jika tidak ada input
+      }
+  });
+
+  document.getElementById('nextPageButton').addEventListener('click', function() {
+    const visitorName = document.getElementById('visitorName').value.trim();
+    localStorage.setItem('visitorName', visitorName); // Simpan nama pengunjung ke localStorage
+
+    // Animasi fade-out menggunakan GSAP
+    gsap.to("body", {
+        duration: 0.5,
+        opacity: 0,
+        onComplete: function() {
+            window.location.href = 'index.html'; // Pindah ke halaman index.html setelah animasi selesai
+        }
+    });
+});
+</script>
+
+    <!-- script section close -->
+  </body>
+</html>

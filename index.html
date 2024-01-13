@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta http-equiv="refresh" content="0; url=landingpage.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>PRA UAS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
@@ -15,16 +16,11 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   </head>
   <body>
-    <!-- particle.js buka -->
-    <div id="particles-js"></div>
-    <div id="text-overlay"></div>
-    <!-- particle.js tutup -->
-
     <!-- navbar buka -->
     <section id="home">
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm fixed-top">
         <div class="container">
-          <a class="navbar-brand" href="#">Muhammad Rafii</a>
+          <a class="navbar-brand" href="landingPage.html">Muhammad Rafii</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -207,8 +203,41 @@
 
     <script>
       gsap.registerPlugin(TextPlugin);
-      gsap.to(".lead", { duration: 3, delay: 2, text: "Mahasiswa | Freelencer | Fotografer" });
-      gsap.to("#text-overlay", { duration: 1.8, text: "SELAMAT DATANG DI WEB PORTOFOLIO SAYA" });
+      gsap.to(".lead", { duration: 1.5, delay: 2, text: "Mahasiswa | Freelencer | Fotografer" });
+      gsap.from(".jumbotron img", { duration: 1, rotateY: 360, opacity: 0 });
+      gsap.from(".navbar", { duration: 1.5, y: "-100%", opacity: 0, ease: "bounce" });
+    </script>
+
+    <script>
+      document.body.style.opacity = 0;
+      gsap.to("body", {
+        duration: 0.8, // Durasi animasi dalam detik
+        opacity: 1, // Mengubah opacity ke 1 untuk fade-in
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedVisitorName = localStorage.getItem("visitorName");
+        if (savedVisitorName) {
+          const thankYouMessage = document.createElement("div");
+          thankYouMessage.innerText = `TERIMA KASIH ${savedVisitorName.toUpperCase()} atas kunjungannya!, Silahkan klik ini untuk kembali ke landing page`;
+          thankYouMessage.style.fontSize = "15px"; // Mengatur ukuran font
+          thankYouMessage.style.textAlign = "center"; // Menengahkan teks
+          thankYouMessage.style.backgroundColor = "#0d6efd"; // Mengatur latar belakang dengan warna yang disebutkan
+          thankYouMessage.style.color = "white"; // Mengatur warna font menjadi putih
+          thankYouMessage.style.cursor = "pointer"; // Mengubah kursor saat diarahkan ke teks
+          thankYouMessage.style.fontFamily = "Arial, sans-serif"; // Mengatur jenis font
+          thankYouMessage.style.fontWeight = "bold";
+
+          // Menambahkan event listener untuk mengarahkan pengguna ke halaman HTML lain saat teks diklik
+          thankYouMessage.addEventListener("click", function () {
+            window.location.href = "landingPage.html"; // Mengarahkan ke landingPage.html saat teks diklik
+          });
+
+          document.body.appendChild(thankYouMessage);
+        }
+      });
     </script>
 
     <script>
@@ -231,114 +260,6 @@
             console.log("Success!", response);
           })
           .catch((error) => console.error("Error!", error.message));
-      });
-    </script>
-
-    <script>
-      particlesJS("particles-js", {
-        particles: {
-          number: {
-            value: 90,
-            density: {
-              enable: true,
-              value_area: 800,
-            },
-          },
-          color: {
-            value: "#000000",
-          },
-          shape: {
-            type: "circle",
-            stroke: {
-              width: 0,
-              color: "#000000",
-            },
-            polygon: {
-              nb_sides: 5,
-            },
-          },
-          opacity: {
-            value: 0.5,
-            random: false,
-            anim: {
-              enable: false,
-              speed: 1,
-              opacity_min: 0.1,
-              sync: false,
-            },
-          },
-          size: {
-            value: 3,
-            random: true,
-            anim: {
-              enable: false,
-              speed: 40,
-              size_min: 0.1,
-              sync: false,
-            },
-          },
-          line_linked: {
-            enable: true,
-            distance: 150,
-            color: "#000000",
-            opacity: 0.4,
-            width: 1,
-          },
-          move: {
-            enable: true,
-            speed: 6,
-            direction: "none",
-            random: false,
-            straight: false,
-            out_mode: "out",
-            bounce: false,
-            attract: {
-              enable: false,
-              rotateX: 600,
-              rotateY: 1200,
-            },
-          },
-        },
-        interactivity: {
-          detect_on: "canvas",
-          events: {
-            onhover: {
-              enable: true,
-              mode: "grab",
-            },
-            onclick: {
-              enable: true,
-              mode: "push",
-            },
-            resize: true,
-          },
-          modes: {
-            grab: {
-              distance: 140,
-              line_linked: {
-                opacity: 1,
-              },
-            },
-            bubble: {
-              distance: 400,
-              size: 40,
-              duration: 2,
-              opacity: 8,
-              speed: 3,
-            },
-            repulse: {
-              distance: 200,
-              duration: 0.4,
-            },
-            push: {
-              particles_nb: 4,
-            },
-            remove: {
-              particles_nb: 2,
-            },
-          },
-        },
-        retina_detect: true,
       });
     </script>
   </body>
